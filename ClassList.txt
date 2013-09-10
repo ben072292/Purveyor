@@ -1,4 +1,5 @@
 Students enrolled in CS390
  - Taught by Dr. Roberts
 --------------------------
+Don Roberts
 Nathan McGill
