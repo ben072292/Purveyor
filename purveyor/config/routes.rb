@@ -2,7 +2,7 @@ Purveyor::Application.routes.draw do
   get "form/customerform"
 
   root :to => "form#customerform"
-
+ 
 <<<<<<< HEAD
 =======
   # Sample of named route:
