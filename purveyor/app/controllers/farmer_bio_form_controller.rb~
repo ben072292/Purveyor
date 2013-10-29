@@ -1,6 +1,0 @@
-class FarmerBioFormController < ApplicationController
-
-  def new
-  end
-
-end
