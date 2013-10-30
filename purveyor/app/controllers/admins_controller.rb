@@ -41,8 +41,9 @@ class AdminsController < ApplicationController
 
   # DELETE /admins/1
   def destroy
+    @admin = Admin.find(params[:id])
     @admin.destroy
-    redirect_to admins_url, notice: 'Admin was successfully destroyed.'
+    redirect_to admin_path, notice: 'Admin was successfully destroyed.'
   end
 
   private
