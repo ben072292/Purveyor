@@ -43,7 +43,7 @@ class AdminsController < ApplicationController
   def destroy
     @admin = Admin.find(params[:id])
     @admin.destroy
-    redirect_to admin_path, notice: 'Admin was successfully destroyed.'
+    redirect_to admins_path, notice: 'Admin was successfully destroyed.'
   end
 
   private
