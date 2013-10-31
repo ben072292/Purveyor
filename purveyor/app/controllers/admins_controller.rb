@@ -32,16 +32,15 @@ class AdminsController < ApplicationController
 
   # PATCH/PUT /admins/1
   def update
-    if @admin.update(admin_params)
+      if @admin.update(params[:admin].permit(:username, :password))
       redirect_to @admin, notice: 'Admin was successfully updated.'
     else
-      render action: 'edit'
+      render 'edit'
     end
   end
 
   # DELETE /admins/1
   def destroy
-    @admin = Admin.find(params[:id])
     @admin.destroy
     redirect_to admin_path, notice: 'Admin was successfully destroyed.'
   end
