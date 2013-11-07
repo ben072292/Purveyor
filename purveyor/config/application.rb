@@ -38,5 +38,8 @@ module Purveyor
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
+    ActiveRecord::SessionStore::Session.table_name = 'legacy_session_table'
+    ActiveRecord::SessionStore::Session.primary_key = 'session_id'
+    ActiveRecord::SessionStore::Session.data_column_name = 'legacy_session_data'
   end
 end
