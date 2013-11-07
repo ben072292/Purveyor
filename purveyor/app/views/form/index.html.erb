@@ -1,4 +1,5 @@
-<h1>Form</h1>
+<%= link_to 'New form', new_formers_path %>
+
 <%= form_for :home do |f| %>
 <p>
   <%= f.label :Name %><br>
@@ -6,17 +7,17 @@
   </p>
 
 <p>
-  <%= f.label :NameofBusiness %><br>
+  <%= f.label :NameofBusiness, "Name of Business" %><br>
   <%= f.text_field :NameofBusiness %>
 </p>
 
 <p>
-  <%= f.label :ContactNumber %><br>
+  <%= f.label :ContactNumber, "Contact Number" %><br>
   <%= f.text_field :ContactNumber %>
 </p>
 
 <p>
-  <%= f.label :ContactEmail %><br>
+  <%= f.label :ContactEmail, "Contact Email" %><br>
   <%= f.text_field :ContactEmail %>
 </p>
 

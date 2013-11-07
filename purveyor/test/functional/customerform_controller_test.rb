@@ -1,7 +1,10 @@
 require 'test_helper'
 
-class FormControllerTest < ActionController::TestCase
+class CustomerFormControllerTest < ActionController::TestCase
   # Replace this with your real tests.
+  def setup
+    @controller = customerform_controller
+  end
   test "Should get index" do
     get :index
     assert true
