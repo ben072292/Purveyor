@@ -42,7 +42,7 @@ class AdminsController < ApplicationController
   # DELETE /admins/1
   def destroy
     @admin.destroy
-    redirect_to admin_path, notice: 'Admin was successfully destroyed.'
+    redirect_to admins_path, notice: 'Admin was successfully destroyed.'
   end
 
   private
