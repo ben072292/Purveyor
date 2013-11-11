@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131105203058) do
+ActiveRecord::Schema.define(version: 20131111162442) do
 
   create_table "admins", force: true do |t|
     t.string   "username"
@@ -21,15 +21,15 @@ ActiveRecord::Schema.define(version: 20131105203058) do
     t.string   "password_digest"
   end
 
-  create_table "sessions", force: true do |t|
+  create_table "legacy_session_table", force: true do |t|
     t.string   "session_id", null: false
     t.text     "data"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "sessions", ["session_id"], name: "index_sessions_on_session_id", unique: true
-  add_index "sessions", ["updated_at"], name: "index_sessions_on_updated_at"
+  add_index "legacy_session_table", ["session_id"], name: "index_legacy_session_table_on_session_id", unique: true
+  add_index "legacy_session_table", ["updated_at"], name: "index_legacy_session_table_on_updated_at"
 
   create_table "users", force: true do |t|
     t.string   "login",             null: false
