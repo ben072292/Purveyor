@@ -6,9 +6,14 @@ class FarmersFormController < ApplicationController
 
   def create
     render text: params[ :farmers_form].inspect
+    @farmer = Farmer.new(farmer_params)
   end
 
   def new
+    @farmer = Farmer.new
+  end
+
+  def edit
   end
 
   def show
