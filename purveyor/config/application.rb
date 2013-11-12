@@ -40,6 +40,6 @@ module Purveyor
     config.filter_parameters += [:password]
     ActiveRecord::SessionStore::Session.table_name = 'legacy_session_table'
     ActiveRecord::SessionStore::Session.primary_key = 'session_id'
-    ActiveRecord::SessionStore::Session.data_column_name = 'legacy_session_data'
+    ActiveRecord::SessionStore::Session.data_column_name = 'data'
   end
 end
