@@ -4,6 +4,8 @@ class Admin < ActiveRecord::Base
   validates :username, presence: true, length: { maximum: 50 }
   validates :password, presence:   true,
                     uniqueness: { case_sensitive: false }
+  validates_confirmation_of :password
+  validates :confirmpassword, presence: true
   has_secure_password
   validates :password, length: { minimum: 2 }
 

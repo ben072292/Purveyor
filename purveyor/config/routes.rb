@@ -1,5 +1,6 @@
 Purveyor::Application.routes.draw do
 
+  get "users/new"
   resources :farmer_bio_form
   resources :customerform
   resources :admins

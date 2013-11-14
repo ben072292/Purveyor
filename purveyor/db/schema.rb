@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131111162442) do
+ActiveRecord::Schema.define(version: 20131113192439) do
 
   create_table "admins", force: true do |t|
     t.string   "username"
@@ -30,6 +30,13 @@ ActiveRecord::Schema.define(version: 20131111162442) do
 
   add_index "legacy_session_table", ["session_id"], name: "index_legacy_session_table_on_session_id", unique: true
   add_index "legacy_session_table", ["updated_at"], name: "index_legacy_session_table_on_updated_at"
+
+  create_table "new_users", force: true do |t|
+    t.string   "username"
+    t.string   "password"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "login",             null: false
