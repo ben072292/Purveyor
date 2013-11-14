@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131113192439) do
+ActiveRecord::Schema.define(version: 20131114191936) do
 
   create_table "admins", force: true do |t|
     t.string   "username"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20131113192439) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "password_digest"
+    t.string   "remember_token"
   end
 
   create_table "legacy_session_table", force: true do |t|
