@@ -1,11 +1,7 @@
-class CustomerformController < ApplicationController
+class CustomersController < ApplicationController
 
   def index
-   render :partial => "customerform/customerform"
-  end
-
-  def list
-   @customer = Customer.find(:all)
+   @customer_list = Customer.find(:all)
   end
 
   def new
