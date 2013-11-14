@@ -4,15 +4,17 @@
 <div class="row">
   <div class="span6 offset3">
     <%= form_tag(sessions_path) do %>
-
-      <%= label :session, :username %>
+    <p>
+      <%= label :session, :username, "Username:" %>
       <%= text_field :session, :username %>
-      
-      <%= label :session, :password %>
+    </p>
+    <p>
+      <%= label :session, :password, "Password:" %>
       <%= password_field :session, :password %>
-
+    </p>
+    <p>
       <%= submit_tag "Sign in", class: "btn btn-large btn-primary" %>
-    <% end %>
-
+      <% end %>
+    </p>
   </div>
 </div>
