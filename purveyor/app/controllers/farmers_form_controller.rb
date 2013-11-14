@@ -43,7 +43,7 @@ class FarmersFormController < ApplicationController
   #DELETE /admins/1
   def destroy
     @farmer.destroy
-    redirect_to farmers_path, notice: 'Admin was successfully destroyed.'
+    redirect_to farmers_form_path, notice: 'Admin was successfully destroyed.'
   end
 
   private
