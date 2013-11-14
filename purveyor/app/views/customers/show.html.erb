@@ -5,25 +5,28 @@
 
 <p>
 <strong>Name of Business</strong>
-<%= @customer.NameofBusiness %>
+<%= @customer.nameofbusiness %>
 </p>
 
 <p>
 <strong>Contact Number</strong>
-<%= @customer.ContactNumber %>
+<%= @customer.contactnumber %>
 </p>
 
 <p>
 <strong>Contact Email</strong>
-<%= @customer.ContactEmail %>
+<%= @customer.contactemail %>
 </p>
 
 <p>
 <strong>Type of Business</strong>
-<%= @customer.TypeofBusiness %>
+<%= @customer.typeofbusiness %>
 </p>
 
 <p>
 <strong>Pick-up Location</strong>
-<%= @customer.Desiredpickuplocation %>
+<%= @customer.pickuplocation %>
 </p>
+
+<%= link_to 'Back', customers_path %>
+| <%= link_to 'Edit', edit_customer_path(@customer) %>
