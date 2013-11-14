@@ -2,12 +2,7 @@ class Admin < ActiveRecord::Base
   before_create :create_remember_token
 
   validates :username, presence: true, length: { maximum: 50 }
-  validates :password, presence:   true,
-                    uniqueness: { case_sensitive: false }
-  validates_confirmation_of :password
-  validates :confirmpassword, presence: true
   has_secure_password
-  validates :password, length: { minimum: 2 }
 
   def Admin.new_remember_token
     SecureRandom.urlsafe_base64
@@ -21,6 +16,6 @@ class Admin < ActiveRecord::Base
   private
     
     def create_remember_token
-      self.remember_token = Admin.encrypt(Admin.new_remember_token)
+      @remember_token = Admin.encrypt(Admin.new_remember_token)
     end
 end

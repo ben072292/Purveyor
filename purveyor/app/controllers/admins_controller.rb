@@ -21,8 +21,7 @@ class AdminsController < ApplicationController
 
   # POST /admins
   def create
-    @admin = Admin.new(admin_params)
-
+    @admin = Admin.new(admin_params)  
     if @admin.save
       sign_in @admin
       redirect_to @admin, notice: 'Admin was successfully created.'
@@ -55,6 +54,6 @@ class AdminsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def admin_params
-      params.require(:admin).permit(:username, :password)
+      params.require(:admin).permit(:username, :password, :password_confirmation)
     end
 end
