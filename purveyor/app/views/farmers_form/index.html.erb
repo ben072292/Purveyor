@@ -1,5 +1,32 @@
-<h> Farmer </h>
+<h1>Listing farmers</h1>
 
-<p>
-  <%= link_to "New Farmer", controller: "farmers_form" %>
-</p>
+<table>
+  <thead>
+    <tr>
+      <th>Picture</th>
+      <th>Bio</th>
+      <th>Location</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @farmers.each do |farmer| %>
+      <tr>
+	<td><%= farmer.Picture %></td>
+        <td><%= farmer.Bio %></td>
+        <td><%= famer.Location %></td>
+
+        <td><%= link_to 'Show', farmers_form %></td>
+        <td><%= link_to 'Edit', edit_farmers_form_path(farmer) %></td>
+        <td><%= link_to 'Destroy', farmer, method: :delete %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Farmer', new_farmers_form_path %>
