@@ -13,14 +13,14 @@
   </thead>
 
   <tbody>
-    <% @farmers.each do |farmer| %>
+    <% @farmer.each do |farmer| %>
       <tr>
 	<td><%= farmer.Picture %></td>
         <td><%= farmer.Bio %></td>
         <td><%= famer.Location %></td>
 
-        <td><%= link_to 'Show', farmers_form %></td>
-        <td><%= link_to 'Edit', edit_farmers_form_path(farmer) %></td>
+        <td><%= link_to 'Show', farmer %></td>
+        <td><%= link_to 'Edit', edit_farmer_path(farmer) %></td>
         <td><%= link_to 'Destroy', farmer, method: :delete %></td>
       </tr>
     <% end %>
@@ -29,4 +29,4 @@
 
 <br>
 
-<%= link_to 'New Farmer', new_farmers_form_path %>
+<%= link_to 'New Farmer', new_farmer_path %>

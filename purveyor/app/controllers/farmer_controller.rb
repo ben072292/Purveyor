@@ -1,8 +1,8 @@
-class FarmersFormController < ApplicationController
+class FarmerController < ApplicationController
 
   # GET /farmer
   def index
-    @farmer = Farmer.all
+    @farmers = Farmer.all
   end
 
   # GET /farmer/1
@@ -24,7 +24,6 @@ class FarmersFormController < ApplicationController
   # GET /farmer/new
   def new
     @farmer = Farmer.new
-    render :partial => "farmer/farmer"
   end
 
   # GET /farmer/1/edit
