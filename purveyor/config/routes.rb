@@ -1,7 +1,6 @@
 Purveyor::Application.routes.draw do
 
-  get "users/new"
-  resources :farmer_bio_form
+  resources :farmers_form
   resources :customerform
   resources :admins
   resources :sessions, only: [:new, :create, :destroy]

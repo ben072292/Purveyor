@@ -1,3 +1,15 @@
 <title>Main Menu</title>
 <h1>Main Menu</h1>
 This is the main menu
+
+<p>
+  <%= link_to "Farmer", controller: "farmers_form" %>
+</p>
+
+<p>
+  <%= link_to "Customer", controller: "customerform" %>
+</p>
+
+<p>
+  <%= link_to "Sign Out", resource: "sessions#destroy" %>
+</p>
