@@ -1,6 +1,6 @@
 class AdminsController < ApplicationController
   before_action :set_admin, only: [:show, :edit, :update, :destroy]
-  skip_before_filter :authorize
+  skip_before_filter :authorize, only: [:new]
 
   # GET /admins
   def index
