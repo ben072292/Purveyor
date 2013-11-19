@@ -1,0 +1,32 @@
+<p>
+<strong>Name</strong>
+<%= @customer.name %>
+</p>
+
+<p>
+<strong>Name of Business</strong>
+<%= @customer.nameofbusiness %>
+</p>
+
+<p>
+<strong>Contact Number</strong>
+<%= @customer.contactnumber %>
+</p>
+
+<p>
+<strong>Contact Email</strong>
+<%= @customer.contactemail %>
+</p>
+
+<p>
+<strong>Type of Business</strong>
+<%= @customer.typeofbusiness %>
+</p>
+
+<p>
+<strong>Pick-up Location</strong>
+<%= @customer.pickuplocation %>
+</p>
+
+<%= link_to 'Back', customers_path %>
+| <%= link_to 'Edit', edit_customer_path(@customer) %>

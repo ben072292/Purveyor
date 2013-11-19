@@ -1,6 +1,8 @@
+<h1>New Customer Information</h1>
 
 
-<%= form_for :home do |f| %>
+<%= form_for @customer  do |f| %>
+
 <p>
   <%= f.label :name %><br>
   <%= f.text_field :name %>
@@ -21,5 +23,17 @@
   <%= f.text_field :contactemail %>
 </p>
 
-<% end %>
+<p>
+   <%= f.label :typeofbusiness, "Type of Business" %><br>
+   <%= f.text_field :typeofbusiness %>
+</p>
 
+<p>
+   <%= f.label :pickuplocation, "Desired Pick-up Location" %><br>
+   <%= f.select :pickuplocation, [['Here', 'here'], ['There', 'there']] %>
+</p>
+
+<p>
+  <%= f.submit "Submit" %>
+</p>
+<% end %>
