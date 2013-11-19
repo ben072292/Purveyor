@@ -1,0 +1,53 @@
+<h1>Editing Customers</h1>
+
+<%= form_for :customer, url: customer_path(@customer), method: :patch do |f| %>
+<% if @customer.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@customer.errors.count, "error") %> prohibited
+    this post from being saved: </h2>
+  <ul>
+    <% @customer.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+
+<p>
+  <%= f.label :name %><br>
+  <%= f.text_field :name %>
+  </p>
+
+<p>
+  <%= f.label :nameofbusiness, "Name of Business" %><br>
+  <%= f.text_field :nameofbusiness %>
+</p>
+
+<p>
+  <%= f.label :contactnumber, "Contact Number" %><br>
+  <%= f.text_field :contactnumber %>
+</p>
+
+<p>
+  <%= f.label :contactemail, "Contact Email" %><br>
+  <%= f.text_field :contactemail %>
+</p>
+
+<p>
+   <%= f.label :typeofbusiness, "Type of Business" %><br>
+   <%= f.text_field :typeofbusiness %>
+</p>
+
+<p>
+   <%= f.label :pickuplocation, "Desired Pick-up Location" %><br>
+   <%= f.select :pickuplocation, [['Here', 'here'], ['There', 'there']] %>
+</p>
+
+<p>
+  <%= f.submit "Save" %>
+</p>
+
+<% end %>
+
+<%= link_to 'Back', customers_path %>
