@@ -5,7 +5,7 @@ class CreateItems < ActiveRecord::Migration
       t.fixnum :quantity
       t.date :expirationDate
       t.string :growingPractice
-      t.string :namey	
+      t.string :name
       t.timestamps
     end
   end

@@ -2,7 +2,7 @@ class Inventory< ActiveRecord::Base
   has_many :Items
   
   def create
-  @current = inventoryArray.new(itemArray)
+  @current = inventory.new(itemArray)
   @current.save
   redirect_to @current
   end
