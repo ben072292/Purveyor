@@ -11,7 +11,8 @@ class SessionsController < ApplicationController
       sign_in @admin
       redirect_to root_url
     else
-      flash.keep
+      flash.now[:error] = "Invalid Username/Password Combination"
+   #   flash.keep
       render 'new'
     end
   end
