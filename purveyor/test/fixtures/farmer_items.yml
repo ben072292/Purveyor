@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  cost: 
+  quantity: 
+  expirationDate: 2013-11-07
+  growingPractice: MyString
+
+two:
+  cost: 
+  quantity: 
+  expirationDate: 2013-11-07
+  growingPractice: MyString
