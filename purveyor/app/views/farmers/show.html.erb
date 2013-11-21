@@ -1,14 +1,41 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Bio:</strong>
-  <%= @farmer.Bio %>
+  <strong>Name:</strong>
+  <%= @farmer.name %>
+</p>
+
+<p>
+  <strong>Name of Business:</strong>
+  <%= @farmer.nameofbusiness %>
+</p>
+
+<p>
+  <strong>Contact Number:</strong>
+  <%= @farmer.contactnumber %>
+</p>
+
+<p>
+  <strong>Contact Email:</strong>
+  <%= @farmer.contactemail %>
+</p>
+
+<p>
+  <strong>Farmer Bio:</strong>
+  <%= @farmer.bio %>
 </p>
 
 <p>
   <strong>Location:</strong>
-  <%= @farmer.Location %>
+  <%= @farmer.location %>
 </p>
 
+<p>
+  <strong>Location:</strong>
+  <%= @farmer.location %>
+</p>
+
+
+
 <%= link_to 'Edit', edit_farmer_path(@farmer) %> |
-<%= link_to 'Back', farmer_path %>
+<%= link_to 'Back', farmers_path %>

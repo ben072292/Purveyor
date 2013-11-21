@@ -13,7 +13,25 @@
     </div>
   <% end %>
 
-<%= render "form/index" %>
+<p>
+  <%= f.label :name %><br>
+  <%= f.text_field :name %>
+  </p>
+
+<p>
+  <%= f.label :nameofbusiness, "Name of Business" %><br>
+  <%= f.text_field :nameofbusiness %>
+</p>
+
+<p>
+  <%= f.label :contactnumber, "Contact Number" %><br>
+  <%= f.text_field :contactnumber %>
+</p>
+
+<p>
+  <%= f.label :contactemail, "Contact Email" %><br>
+  <%= f.text_field :contactemail %>
+</p>
 
 <div class="field">
   <%= f.label :bio, "Farmer Bio" %><br>

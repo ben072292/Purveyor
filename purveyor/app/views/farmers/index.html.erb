@@ -1,8 +1,12 @@
 <h1>Listing farmers</h1>
 
-<table>
+<table cellspacing = "10">
   <thead>
     <tr>
+      <th>Name</th>
+      <th>Name of Business</th>
+      <th>Contact Number</th>
+      <th>Contact Email</th>
       <th>Picture</th>
       <th>Bio</th>
       <th>Location</th>
@@ -15,13 +19,17 @@
   <tbody>
     <% @farmers.each do |farmer| %>
       <tr>
-	<td><%= farmer.Picture %></td>
-        <td><%= farmer.Bio %></td>
-        <td><%= famer.Location %></td>
+	<td><%= farmer.name %></td>
+	<td><%= farmer.nameofbusiness %></td>
+	<td><%= farmer.contactnumber %></td>
+	<td><%= farmer.contactemail %></td>
+	<td><%= farmer.picture %></td>
+        <td><%= farmer.bio %></td>
+        <td><%= farmer.location %></td>
 
         <td><%= link_to 'Show', farmer %></td>
         <td><%= link_to 'Edit', edit_farmer_path(farmer) %></td>
-        <td><%= link_to 'Destroy', farmer, method: :delete %></td>
+        <td><%= link_to 'Destroy', farmer, method: :delete, data: {confirm: 'Are you sure?'} %></td>
       </tr>
     <% end %>
   </tbody>

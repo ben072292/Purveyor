@@ -7,6 +7,7 @@ class FarmersController < ApplicationController
 
   # GET /farmer/1
   def show
+   set_farmer
   end
 
   # POST /farmer
@@ -27,11 +28,13 @@ class FarmersController < ApplicationController
 
   # GET /farmer/1/edit
   def edit
+  set_farmer
   end
 
   #PATCH/PUT /admins/1
   def update
-    if @farmer.update(params[:farmer].permit(:bio, :location, :picture))
+    set_farmer
+    if @farmer.update(params[:farmer].permit(:name, :nameofbusiness, :contactnumber, :contactemail,:bio, :location, :picture))
       redirect_to @farmer, notice: 'Admin was successfully updated.'
     else
       render 'edit'
@@ -40,6 +43,7 @@ class FarmersController < ApplicationController
 
   #DELETE /admins/1
   def destroy
+    set_farmer
     @farmer.destroy
     redirect_to farmers_path, notice: 'Admin was successfully destroyed.'
   end
