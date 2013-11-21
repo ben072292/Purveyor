@@ -1,4 +1,4 @@
-class FarmerController < ApplicationController
+class FarmersController < ApplicationController
 
   # GET /farmer
   def index
@@ -11,7 +11,6 @@ class FarmerController < ApplicationController
 
   # POST /farmer
   def create
-    render text: params[ :farmer].inspect
     @farmer = Farmer.new(farmer_params)
 
     if @farmer.save
@@ -32,7 +31,7 @@ class FarmerController < ApplicationController
 
   #PATCH/PUT /admins/1
   def update
-    if @farmer.update(params[:farmer].permit(:Bio, :Location, :Picture))
+    if @farmer.update(params[:farmer].permit(:bio, :location, :picture))
       redirect_to @farmer, notice: 'Admin was successfully updated.'
     else
       render 'edit'
@@ -42,7 +41,7 @@ class FarmerController < ApplicationController
   #DELETE /admins/1
   def destroy
     @farmer.destroy
-    redirect_to farmer_path, notice: 'Admin was successfully destroyed.'
+    redirect_to farmers_path, notice: 'Admin was successfully destroyed.'
   end
 
   private
@@ -53,7 +52,7 @@ class FarmerController < ApplicationController
   
   # Only allow a trusted parameter "white list" through
   def farmer_params
-    params.require(:farmer).permit(:Bio, :Location, :Picture)
+    params.require(:farmer).permit(:bio, :location, :picture, :name, :nameofbusiness, :contactnumber, :contactemail)
   end
 
 end

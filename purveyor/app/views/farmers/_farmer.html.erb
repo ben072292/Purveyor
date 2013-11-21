@@ -1,5 +1,5 @@
 <h1>New Farmer</h1>
-<%= form_for @farmer do |f| %>
+<%= form_for (@farmer) do |f| %>
 
  <% if @farmer.errors.any? %>
     <div id="error_explanation">
@@ -15,23 +15,18 @@
 
 <%= render "form/index" %>
 
-
 <div class="field">
-  <%= f.label :Bio, "Farmer Bio" %><br>
-  <%=f.text_area :Bio %>
+  <%= f.label :bio, "Farmer Bio" %><br>
+  <%=f.text_area :bio %>
 </div>
 
 <div class="field">
-<%= f.label :Location, "Location" %><br>
-<%= f.text_field :Location %>
-</div>
-
-<div class="field">
-<%= f.label :Picture, "Farm Profile Pic" %><br>
-   # Figure out how to do this
+<%= f.label :location, "Location" %><br>
+<%= f.text_field :location %>
 </div>
 
 <div class="action">
   <%= f.submit %>
 </div>
+
 <% end %>

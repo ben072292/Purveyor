@@ -1,7 +1,7 @@
 Purveyor::Application.routes.draw do
 
 
-  resources :farmer
+  resources :farmers
   resources :customerform
   resources :admins
   root :to => "main_menu#index"
