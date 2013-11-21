@@ -27,4 +27,12 @@ ActiveRecord::Schema.define(version: 20131031162527) do
     t.datetime "updated_at"
   end
 
+create_table "inventories", force: true do |t|
+    t.string "name"
+    t.fixnum "cost"
+    t.fixnum "quantity"
+    t.date "expirationDate"
+    t.string "growingPractice"
+
+
 end
