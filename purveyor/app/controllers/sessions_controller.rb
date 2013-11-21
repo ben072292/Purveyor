@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
     if @admin && @admin.authenticate(params[:session][:password])
       sign_in @admin
     #  if signed_in?
-      redirect_to @admin  
+      redirect_to session[:original_url] 
     else
       flash.now[:error] = "Invalid Username/Password Combination"
       flash.keep
