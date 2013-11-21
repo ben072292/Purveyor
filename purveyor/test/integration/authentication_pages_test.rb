@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class CustomerformControllerTest < ActionController::TestCase
+class AuthenticationPagesTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end

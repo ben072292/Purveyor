@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class FormControllerTest < ActionController::TestCase
+class CustomersControllerTest < ActionController::TestCase
   # Replace this with your real tests.
   test "Should get index" do
     get :index

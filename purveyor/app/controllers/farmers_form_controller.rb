@@ -1,17 +1,17 @@
 class FarmersFormController < ApplicationController
 
-  def new
+  def index
+    render :partial => "farmers_form/farmers_form"
   end
 
   def create
-    @farmer = Farmer.new(post_params)
-
-    @farmer.save
-    redirect_to @farmer
+    render text: params[ :farmers_form].inspect
   end
 
-  def index
-    
+  def new
+  end
+
+  def show
   end
 
 
