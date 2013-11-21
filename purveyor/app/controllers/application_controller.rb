@@ -10,7 +10,6 @@ private
     unless signed_in?
       session[:original_url] = request.url
       redirect_to :controller => "sessions", :action=>"new"
- #     flash.now[:error] = 'Invalid username/password combination.'
     return false
     end
   end
