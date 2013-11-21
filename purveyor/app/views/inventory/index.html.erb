@@ -2,9 +2,11 @@
 
 <table> cellspacing="10"> 
   <tr>
+    <th>Cost</th>
+    <th>Quantity</th>
+    <th>Expiration Date</th>
+    <th>Growing Practice</th>
     <th>Name</th>
-    <th>Title</th>
-    <th>Content</th>
     <th></th>
     <th></th>
     <th></th>
@@ -12,10 +14,13 @@
   
   
   <% @inventory_list.each do |inventory| %>
+
   <tr>
+    <td><%= inventory.cost %></td>
+    <td><%= inventory.quantity %></td>
+    <td><%= inventory.expirationDate %></td>
+    <td><%= inventory.growingPractice %></td>
     <td><%= inventory.name %></td>
-    <td><%= inventory.title %></td>
-    <td><%= inventory.content %></td>
     <td><%= link_to 'Show', inventory %></td>
     <td><%= link_to 'Edit', edit_inventory_path(inventory) %></td>
     <td><%= link_to 'Destroy', inventory, method: :delete, data: { confirm: 'Are you sure?' } %></td>
