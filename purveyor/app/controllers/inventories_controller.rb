@@ -9,7 +9,7 @@ class InventoriesController < ApplicationController
   end
   
   def create
-    @inventory = Inventory.new(params[ :inventory].permit(:cost, :quantity, :expirationDate, :growingPractice, :name))
+    @inventory = Inventory.new(params[:inventory].permit(:name, :cost, :quantity, :unit, :expirationDate, :growingPractice))
     if @inventory.save
     redirect_to @inventory
     else
@@ -23,8 +23,8 @@ class InventoriesController < ApplicationController
   
   def update
     @inventory = Inventory.find(params[:id])
-
-    if @inventory.update(params[:inventory].permit(:cost, :quantity, :expirationDate, :growingPractice, :name))
+    
+    if @inventory.update(params[:inventory].permit(:name, :cost, :quantity, :unit, :expirationDate, :growingPractice))
       redirect_to @inventory
     else
       render 'edit'
@@ -34,7 +34,7 @@ class InventoriesController < ApplicationController
   def show
     @inventory = Inventory.find(params[:id])
   end
-
+  
   def destroy
     @inventory= Inventory.find(params[:id])
     @inventory.destroy

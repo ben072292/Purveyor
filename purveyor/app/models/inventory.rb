@@ -8,7 +8,7 @@ class Inventory< ActiveRecord::Base
   end
 
     private
-  def itemArray
+  def item
     params.require().permit(:inventory)
   end
 end
