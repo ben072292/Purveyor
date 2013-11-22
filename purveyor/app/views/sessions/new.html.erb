@@ -1,6 +1,12 @@
 <% provide(:title, "Sign in") %>
 <h1>Sign in</h1>
 
+<% if flash[:error] %>
+<div id = "error" ><%= flash[:error] %></div>
+<% end %>
+
+<p> To avoid having to sign in, open app/controllers/application_controller.rb, and comment out the line "before_filter :authorize" </p>
+
 <div class="row">
   <div class="span6 offset3">
     <%= form_tag(sessions_path) do %>
@@ -13,9 +19,10 @@
       <%= password_field :session, :password %>
     </p>
     <p>
-      <%= button_tag "Sign in" %>
-      <%= button_tag "Sign up now!" %>
+      <%= submit_tag "Sign in" %>
       <% end %>
     </p>
+    <p>
+      <%= link_to "Sign up now!", controller: "admins", action: "new" %>
   </div>
 </div>
