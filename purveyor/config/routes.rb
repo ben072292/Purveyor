@@ -3,7 +3,7 @@ Purveyor::Application.routes.draw do
   resources :customers
   resources :admins
   resources :inventories
-  resources :sessions, only: [:new, :create, :destroy]
+#  resources :sessions, only: [:new, :create, :destroy]
   root :to => "main_menu#index"
 
   match '/signin',   to: 'sessions#new',     via: 'get'

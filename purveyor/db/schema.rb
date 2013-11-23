@@ -45,15 +45,17 @@ ActiveRecord::Schema.define(version: 20131115160902) do
     t.datetime "updated_at"
   end
 
-<<<<<<< HEAD
-create_table "inventories", force: true do |t|
-    t.string "name"
-    t.fixnum "cost"
-    t.fixnum "quantity"
-    t.date "expirationDate"
-    t.string "growingPractice"
+  create_table "items", force: true do |t|
+    t.string   "name"
+    t.decimal  "cost"
+    t.decimal  "quantity"
+    t.string   "unit"
+    t.date     "expirationDate"
+    t.string   "growingPractice"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
-=======
   create_table "legacy_session_table", force: true do |t|
     t.string   "session_id", null: false
     t.text     "data"
@@ -87,6 +89,5 @@ create_table "inventories", force: true do |t|
     t.datetime "updated_at"
     t.string   "remember_token"
   end
->>>>>>> master
 
 end
