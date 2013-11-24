@@ -1,14 +1,18 @@
 class CreateItems < ActiveRecord::Migration
+
   def change
     create_table :items do |t|
-      t.column :name, :string
-      t.column :cost, :decimal
-      t.column :quantity, :decimal
-      t.column :unit, :string
-      t.column :expirationDate, :date
-      t.column :growingPractice, :string
-      t.column :created_at, :datetime
-      t.column :updated_at, :datetime
+      t.string :name
+      t.decimal :cost
+      t.decimal :quantity
+      t.string :unit
+      t.date :expirationDate
+      t.string :growingPractice
+      t.references :inventory
+
+      t.timestamps
     end
+    
+    add_index :items, :inventory_id
   end
 end

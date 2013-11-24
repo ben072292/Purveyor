@@ -1,15 +1,18 @@
-<%= form_for :inventoryItem,url: posts_path  do |f| %>
+<%= form_for :items,url: inventories_path  do |f| %>
   <p>
-     <%=  t.fixnum :cost%>
-     <%=   t.fixnum :quantity%>
-     <%=   t.date :expirationDate%>
-     <%=   t.string :growingPractice%>
+    <%= t.string :name %>
+    <%= t.decimal :cost %>
+    <%= t.decimal :quantity %>
+    <%= t.string :unit %>
+    <%= t.date :expirationDate %>
+    <%= t.string :growingPractice %>
   </p>
- 
-  <p>
-  </p>
- 
-  <p>
-    <%= f.submit %>
-  </p>
+  
+<p>
+</p>
+
+<p>
+  <%= f.submit %>
+</p>
+
 <% end %> 

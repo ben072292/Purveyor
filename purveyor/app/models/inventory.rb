@@ -1,14 +1,15 @@
 class Inventory< ActiveRecord::Base
-  has_many :Items
+  has_many :items
+ 
+  validates :name, presence: true,
+  length: {minimum: 5}
   
-  def create
-  @current = Inventory.new(item)
-  @current.save
-  redirect_to @current
-  end
-
-    private
-  def item
-    params.require().permit(:inventory)
-  end
+  validates :quantity, presence: true
+  
+  validates :unit, presence: true,
+  length: {minimum: 1}
+  
+  validates :growingPractice, presence: true
+  
+  validates :expirationDate, presence: true
 end
