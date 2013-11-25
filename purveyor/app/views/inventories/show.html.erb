@@ -1,0 +1,44 @@
+<p>
+<strong>Title:</strong>
+<%= @inventory.title %>
+</p>
+
+<p>
+<strong>Text:</strong>
+<%= @inventory.text %>
+</p>
+
+<h2>Add a comment:</h2>
+<%= form_for([@inventory, @inventory.items.build]) do |f| %>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.string :name %>
+  </p>
+  <p>
+    <%= f.label :cost %><br />
+    <%= f.decimal :cost %>
+  </p>
+  <p>
+    <%= f.label :quantity %><br />
+    <%= f.decimal :quantity %>
+  </p>
+  <p>
+    <%= f.label :unit %><br />
+    <%= f.string :unit %>
+  </p>
+  <p>
+    <%= f.label :expirationDate %><br />
+    <%= f.date :expirationDate %>
+  </p>
+  <p>
+    <%= f.label :growingPractice %><br />
+    <%= f.sting :growingPractice %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+ 
+<%= link_to 'Back', inventories_path %>
+| <%= link_to 'Edit', edit_inventory_path(@inventory) %>
