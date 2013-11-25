@@ -6,12 +6,11 @@ class ApplicationController < ActionController::Base
 
 private
 
-  def authorize
-    unless Admin.find_by id:(session[:id])
-     session[:original_url] = request.url
+  def authorize 
+    unless signed_in?
+      session[:original_url] = request.url
       redirect_to :controller => "sessions", :action=>"new"
-      flash.now[:error] = 'Invalid username/password combination.'
-     return false
+    return false
     end
   end
 end
