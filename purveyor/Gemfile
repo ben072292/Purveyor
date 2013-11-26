@@ -41,7 +41,7 @@ gem 'authlogic'
 gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
 # gem 'bootstrap-sass', '2.3.2.0'
 gem 'bcrypt-ruby', '~> 3.0.0'
-gem 'debugger'
+# gem 'debugger'
 # Use unicorn as the web server
 # gem 'unicorn'
 

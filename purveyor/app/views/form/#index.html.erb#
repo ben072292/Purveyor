@@ -1,6 +1,6 @@
+<%= link_to 'New form', new_formers_path %>
 
-
-<%= form_for :home  do |f| %>
+<%= form_for :home do |f| %>
 <p>
   <%= f.label :name %><br>
   <%= f.text_field :name %>
@@ -17,7 +17,7 @@
 </p>
 
 <p>
-  <%= f.label :contactcmail, "Contact Email" %><br>
+  <%= f.label :contactemail, "Contact Email" %><br>
   <%= f.text_field :contactemail %>
 </p>
 
