@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
       flash.now[:error] = "Invalid Username/Password Combination"
       flash.keep
     end
-    redirect_to session[:original_url]
+    redirect_to root_url
   end
  
   def destroy
