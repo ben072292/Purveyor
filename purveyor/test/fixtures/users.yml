@@ -1,9 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  username: MyString
-  password: MyString
+  login: foo
+  crypted_password: DEADBEEF
+  password_salt: NaCl
+  persistence_token: wait
 
 two:
-  username: MyString
-  password: MyString
+  login: bar
+  crypted_password: DEADBEEF
+  password_salt: NaCl
+  persistence_token: wait
