@@ -1,0 +1,27 @@
+<h1>Listing Inventories</h1>
+
+<table cellspacing="20"> 
+  <tr>
+    <th>Name</th>
+    <th>Cost</th>
+    <th>Quantity</th>
+    <th>Unit</th>
+    <th>Expiration Date</th>
+    <th>Growing Practice</th>
+  </tr>
+  
+  
+  <% @inventory_list.each do |inventory| %>
+  <tr>
+    <td><%= inventory.item.name %></td>
+    <td><%= inventory.item.cost %></td>
+    <td><%= inventory.item.quantity %></td>
+    <td><%= inventory.item.unit %></td>
+    <td><%= inventory.item.expirationDate %></td>
+    <td><%= inventory.item.growingPractice %></td>
+    <td><%= link_to 'Show', inventory %></td>
+    <td><%= link_to 'Edit', edit_inventory_path(inventory) %></td>
+    <td><%= link_to 'Destroy', inventory, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+  <% end %>
+</table>

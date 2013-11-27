@@ -52,6 +52,25 @@ ActiveRecord::Schema.define(version: 20131119174805) do
     t.string   "contactemail"
   end
 
+  create_table "inventories", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "items", force: true do |t|
+    t.string   "name"
+    t.decimal  "cost"
+    t.decimal  "quantity"
+    t.string   "unit"
+    t.date     "expirationDate"
+    t.string   "growingPractice"
+    t.integer  "inventory_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "items", ["inventory_id"], name: "index_items_on_inventory_id"
+
   create_table "legacy_session_table", force: true do |t|
     t.string   "session_id", null: false
     t.text     "data"
