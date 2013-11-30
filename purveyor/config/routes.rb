@@ -1,7 +1,11 @@
 Purveyor::Application.routes.draw do
 <<<<<<< HEAD
+<<<<<<< HEAD
    
   resources :farmers_form
+=======
+
+>>>>>>> ae5e37cb9cae691df2496765235b788200863c81
 =======
 
 >>>>>>> ae5e37cb9cae691df2496765235b788200863c81

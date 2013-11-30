@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
@@ -12,6 +13,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+=======
+>>>>>>> ae5e37cb9cae691df2496765235b788200863c81
 =======
 >>>>>>> ae5e37cb9cae691df2496765235b788200863c81
 ActiveRecord::Schema.define(version: 20131119174805) do
