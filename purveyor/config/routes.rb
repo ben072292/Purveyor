@@ -1,13 +1,17 @@
 Purveyor::Application.routes.draw do
+<<<<<<< HEAD
    
   resources :farmers_form
+=======
+
+>>>>>>> ae5e37cb9cae691df2496765235b788200863c81
   resources :customers
   resources :farmers
   resources :admins
   resources :inventories do
     resources :items
   end
-#  resources :sessions, only: [:new, :create, :destroy]
+  resources :sessions, only: [:new, :create, :destroy]
   root :to => "main_menu#index"
 
   match '/signin',   to: 'sessions#new',     via: 'get'
