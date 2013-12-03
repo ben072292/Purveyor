@@ -7,6 +7,7 @@ Purveyor::Application.routes.draw do
   resources :inventories do
     resources :items
   end
+  resources :restricted
   resources :sessions, only: [:new, :create, :destroy]
   root :to => "main_menu#index"
 
