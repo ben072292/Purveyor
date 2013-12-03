@@ -2,6 +2,7 @@
 
 <table cellspacing = "10">
   <thead>
+    <% if admin? %>
     <tr>
       <th>Name</th>
       <th>Name of Business</th>
@@ -14,23 +15,36 @@
       <th></th>
       <th></th>
     </tr>
+    <% else if customer?%>
+    <tr>
+      <th>Name of Business</th>
+      <th>Picture</th>
+      <th>Bio</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    <% else %>
+    <% render "restricted/show" %>
+    <% end %>
+    <% end %>
   </thead>
 
   <tbody>
     <% @farmers.each do |farmer| %>
-      <tr>
-	<td><%= farmer.name %></td>
-	<td><%= farmer.nameofbusiness %></td>
-	<td><%= farmer.contactnumber %></td>
-	<td><%= farmer.contactemail %></td>
-	<td><%= farmer.picture %></td>
-        <td><%= farmer.bio %></td>
-        <td><%= farmer.location %></td>
-
-        <td><%= link_to 'Show', farmer %></td>
-        <td><%= link_to 'Edit', edit_farmer_path(farmer) %></td>
-        <td><%= link_to 'Destroy', farmer, method: :delete, data: {confirm: 'Are you sure?'} %></td>
-      </tr>
+    <tr>
+      <td><%= farmer.name %></td>
+      <td><%= farmer.nameofbusiness %></td>
+      <td><%= farmer.contactnumber %></td>
+      <td><%= farmer.contactemail %></td>
+      <td><%= farmer.picture %></td>
+      <td><%= farmer.bio %></td>
+      <td><%= farmer.location %></td>
+      
+      <td><%= link_to 'Show', farmer %></td>
+      <td><%= link_to 'Edit', edit_farmer_path(farmer) %></td>
+      <td><%= link_to 'Destroy', farmer, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+    </tr>
     <% end %>
   </tbody>
 </table>

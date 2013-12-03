@@ -24,4 +24,17 @@ module SessionsHelper
     self.current_admin = nil
     cookies.delete(:remember_token)
   end
+
+  def customer?
+    current_admin[:usertype]=="customer"
+  end
+
+  def farmer?
+    current_admin[:usertype]=="farmer"
+  end
+
+  def admin?
+    !customer? && !farmer?
+  end
+
 end

@@ -25,7 +25,7 @@ class AdminsController < ApplicationController
     @admin = Admin.new(admin_params)  
     if @admin.save
       sign_in @admin
-      redirect_to @admin, notice: 'Admin was successfully created.'
+      redirect_to @admin, notice: 'Account created.'
     else
       render action: 'new'
     end
@@ -34,7 +34,7 @@ class AdminsController < ApplicationController
   # PATCH/PUT /admins/1
   def update
       if @admin.update(params[:admin].permit(:username, :password))
-      redirect_to @admin, notice: 'Admin was successfully updated.'
+      redirect_to @admin, notice: 'Account updated.'
     else
       render 'edit'
     end
@@ -43,7 +43,7 @@ class AdminsController < ApplicationController
   # DELETE /admins/1
   def destroy
     @admin.destroy
-    redirect_to admins_path, notice: 'Admin was successfully destroyed.'
+    redirect_to admins_path, notice: 'Account destroyed.'
   end
 
   private

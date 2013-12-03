@@ -2,5 +2,8 @@
   <%= link_to "Main Menu", root_url %>
   &nbsp;
   &nbsp;
+  <% if signed_in? %>
   <%= link_to "Sign Out", signout_path, method: "delete" %>
+  <% else %>
+  <% end %>
 </p>
