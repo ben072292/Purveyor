@@ -1,8 +1,12 @@
 Purveyor::Application.routes.draw do
 
+  resources :farmers_form
   resources :customers
   resources :farmers
   resources :admins
+  resources :inventories do
+    resources :items
+  end
   resources :sessions, only: [:new, :create, :destroy]
   root :to => "main_menu#index"
 
