@@ -10,5 +10,9 @@
   <%= @admin.password %>
 </p>
 
-<%= link_to 'Edit', edit_admin_path(@admin) %> |
-<%= link_to 'Back', admins_path %>
+<p>
+  <strong>Account Type:</strong>
+  <%= @admin.usertype %>
+</p>
+
+<%= link_to 'Edit Profile', edit_admin_path(@admin) %>
