@@ -3,17 +3,22 @@
 This is the main menu
 
 <p>
-  <%= link_to "Farmer", controller: "farmers" %>
-</p>
-
-<p>
   <% if customer? %>
-  <%= link_to "Profile", controller: "admins", method: "show" %>
-  <% else %>
-  <%= link_to "Customer", controller: "customers" %>
-  <% end %>
-</p>
+<p>  <%= link_to "My Profile", controller: "admins", method: "show" %> </p>
+<p>  <%= link_to "List of Farmers", controller: "farmers" %> </p>
+<p>  <%= link_to "Shop", controller: "inventories" %> </p>
+  
+  <% else if farmer? %>
+<p>  <%= link_to "My Profile", controller: "admins", method: "show" %> </p>
+<p> <%= link_to "Current Inventory", controller: "inventories" %> </p>
 
 <p>
-<%= link_to "Inventory", controller: "inventories" %>
+  <% else %>
+<p>  <%= link_to "Farmers", controller: "farmers" %> </p>
+<p>  <%= link_to "Customer", controller: "customers" %> </p>
+<p>  <%= link_to "Inventory", controller: "inventory" %> </p>
+
+<% end %>
+<% end %>
+
 </p>
