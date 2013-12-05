@@ -1,4 +1,6 @@
 class FarmersController < ApplicationController
+  before_filter :is_admin?
+  skip_before_filter :is_admin?, only: [:show]
 
   # GET /farmer
   def index

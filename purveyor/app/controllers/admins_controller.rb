@@ -1,6 +1,9 @@
 class AdminsController < ApplicationController
   before_action :set_admin, only: [:show, :edit, :update, :destroy]
   skip_before_filter :authorize, only: [:new, :create]
+  before_filter :is_admin?
+  skip_before_filter :is_admin?, only: [:new, :create]
+
 
   # GET /admins
   def index
@@ -9,6 +12,7 @@ class AdminsController < ApplicationController
 
   # GET /admins/1
   def show
+    @admin = Admin.find(params[:id])
   end
 
   # GET /admins/new

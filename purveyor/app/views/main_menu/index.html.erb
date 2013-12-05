@@ -7,7 +7,11 @@ This is the main menu
 </p>
 
 <p>
+  <% if customer? %>
+  <%= link_to "Profile", controller: "admins", method: "show" %>
+  <% else %>
   <%= link_to "Customer", controller: "customers" %>
+  <% end %>
 </p>
 
 <p>
