@@ -2,7 +2,7 @@ class AdminsController < ApplicationController
   before_action :set_admin, only: [:show, :edit, :update, :destroy]
   skip_before_filter :authorize, only: [:new, :create]
   before_filter :is_admin?
-  skip_before_filter :is_admin?, only: [:new, :create, :show]
+  skip_before_filter :is_admin?, only: [:new, :create, :show, :edit] 
 
 
   # GET /admins
