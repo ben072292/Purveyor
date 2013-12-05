@@ -4,12 +4,12 @@ This is the main menu
 
 <p>
   <% if customer? %>
-<p>  <%= link_to "My Profile", controller: "admins", method: "show" %> </p>
+<p>  <%= link_to "Profile", admin_path(current_admin[:id]) %> </p>
 <p>  <%= link_to "List of Farmers", controller: "farmers" %> </p>
 <p>  <%= link_to "Shop", controller: "inventories" %> </p>
   
   <% else if farmer? %>
-<p>  <%= link_to "My Profile", controller: "admins", method: "show" %> </p>
+<p> <%= link_to "Profile", admin_path(current_admin[:id]) %> </p>
 <p> <%= link_to "Current Inventory", controller: "inventories" %> </p>
 
 <p>
