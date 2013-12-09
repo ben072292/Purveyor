@@ -1,6 +1,6 @@
 class CustomersController < ApplicationController
   before_filter :is_admin?
-  skip_before_filter :is_admin?, only: [:show]
+  skip_before_filter :is_admin?, only: [:show, :index, :new, :edit, :create] 
 
   def index
    @customer_list = Customer.all

@@ -1,27 +1,25 @@
-<h1>Listing farmers</h1>
+<h1>Participating Farmers</h1>
 
 <table cellspacing = "10">
   <thead>
     <% if admin? %>
     <tr>
-      <th>Name</th>
-      <th>Name of Business</th>
-      <th>Contact Number</th>
-      <th>Contact Email</th>
-      <th>Picture</th>
-      <th>Bio</th>
-      <th>Location</th>
-      <th></th>
-      <th></th>
+      <th align="left">Name</th>
+      <th align="left">Name of Business</th>
+      <th align="left">Contact Number</th>
+      <th align="left">Contact Email</th>
+      <th align="left">Bio</th>
+      <th align="left">Location</th>
+      <th align="left"></th>
+      <th align="left"></th>
       <th></th>
     </tr>
     <% else if customer?%>
     <tr>
-      <th>Name of Business</th>
-      <th>Picture</th>
-      <th>Bio</th>
-      <th></th>
-      <th></th>
+      <th align="left">Name of Business</th>
+      <th align="left">Bio</th>
+      <th align="left"></th>
+      <th align="left"></th>
       <th></th>
     </tr>
     <% else %>
@@ -33,17 +31,21 @@
   <tbody>
     <% @farmers.each do |farmer| %>
     <tr>
+      <% if admin? %>
       <td><%= farmer.name %></td>
       <td><%= farmer.nameofbusiness %></td>
       <td><%= farmer.contactnumber %></td>
       <td><%= farmer.contactemail %></td>
-      <td><%= farmer.picture %></td>
-      <td><%= farmer.bio %></td>
+      <td><%= link_to 'Read More', farmer %></td>
       <td><%= farmer.location %></td>
       
-      <td><%= link_to 'Show', farmer %></td>
       <td><%= link_to 'Edit', edit_farmer_path(farmer) %></td>
       <td><%= link_to 'Destroy', farmer, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+      <% else %>
+      <td><%= farmer.nameofbusiness %></td>
+      <td><%= link_to 'Read More', farmer %></td>
+      
+      <% end %>
     </tr>
     <% end %>
   </tbody>
@@ -51,4 +53,6 @@
 
 <br>
 
+<% if admin? %>
 <%= link_to 'New Farmer', new_farmer_path %>
+<% end %>

@@ -1,26 +1,26 @@
-<h1>Listing Customers</h1>
+<h1>Customers</h1>
 
 <table cellspacing="10">
   <tr>
-    <th>Name</th>
-    <th>Name of Business</th>
-    <th>Contact Number</th>
-    <th>Contact Email</th>
-    <th>Type of Business</th>
-    <th>Pick-up Location</th>
+    <th align="left">Name</th>
+    <th align="left">Name of Business</th>
+    <th align="left">Contact Number</th>
+    <th align="left">Contact Email</th>
+    <th align="left">Type of Business</th>
+    <th align="left">Pick-up Location</th>
   </tr>
 
 <% @customer_list.each do |customer| %>
 <tr>
-  <td><%= customer.name %></td>
-  <td><%= customer.nameofbusiness %></td>
-  <td><%= customer.contactnumber %></td>
-  <td><%= customer.contactemail %></td>
-  <td><%= customer.typeofbusiness %></td>
-  <td><%= customer.pickuplocation %></td>
-  <td><%= link_to 'Show', customer %></td>
-  <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
-  <td><%= link_to 'Destroy', customer_path(customer),
+  <td align="left"><%= customer.name %></td>
+  <td align="left"><%= customer.nameofbusiness %></td>
+  <td align="left"><%= customer.contactnumber %></td>
+  <td align="left"><%= customer.contactemail %></td>
+  <td align="left"><%= customer.typeofbusiness %></td>
+  <td align="left"><%= customer.pickuplocation %></td>
+  <td align="left"><%= link_to 'Show', customer %></td>
+  <td align="left"><%= link_to 'Edit', edit_customer_path(customer) %></td>
+  <td align="left"><%= link_to 'Destroy', customer_path(customer),
 	           method: :delete, data: { confirm: 'Are you sure?' } %></td>
 </tr>
 <% end %>

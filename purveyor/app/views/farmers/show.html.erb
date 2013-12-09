@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 
+<% if admin? %>
 <p>
   <strong>Name:</strong>
   <%= @farmer.name %>
@@ -35,7 +36,20 @@
   <%= @farmer.location %>
 </p>
 
-
-
 <%= link_to 'Edit', edit_farmer_path(@farmer) %> |
+
+<% else %>
+<p>
+  <strong>Name of Business:</strong>
+  <%= @farmer.nameofbusiness %>
+</p>
+
+
+<p>
+  <strong>Farmer Bio:</strong>
+  <%= @farmer.bio %>
+</p>
+
+<% end %> 
+
 <%= link_to 'Back', farmers_path %>
