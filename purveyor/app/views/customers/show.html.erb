@@ -32,7 +32,8 @@
 <% @customer.customer_inventories.each do |inventory| %>
   <p>
     <strong>Name:</strong>
-    <%= inventory.name %>
+    <td> <%= inventory.name %> </td>
+    <td> <% link to 'Destroy', customer_inventory, method: :delete, data: {confirm: 'Are you sure?' } %> </td>
   </p>
 <% end %>
 
