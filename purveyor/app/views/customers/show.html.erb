@@ -28,5 +28,23 @@
 <%= @customer.pickuplocation %>
 </p>
 
+<h2>Inventories</h2>
+<% @customer.customer_inventories.each do |inventory| %>
+  <p>
+    <strong>Name:</strong>
+    <%= inventory.name %>
+  </p>
+<% end %>
+
+<h2> Add a inventory item </h2>
+<% form_for([@customer, @customer.customer_inventories.build]) do |f| %>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+
 <%= link_to 'Back', customers_path %>
 | <%= link_to 'Edit', edit_customer_path(@customer) %>

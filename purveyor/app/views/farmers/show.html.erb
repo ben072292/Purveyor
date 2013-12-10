@@ -50,6 +50,25 @@
   <%= @farmer.bio %>
 </p>
 
+<h2>Inventories</h2>
+<% @farmer.farmer_inventories.each do |inventory| %>
+  <p>
+    <strong>Name:</strong>
+    <%= inventory.name %>
+  </p>
+<% end %>
+
+<h2> Add a inventory item </h2>
+<% form_for([@farmer, @farmer.farmer_inventories.build]) do |f| %>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+
 <% end %> 
 
 <%= link_to 'Back', farmers_path %>
+| <% link_to 'Edit', edit_farmer_path(@farmer) %>

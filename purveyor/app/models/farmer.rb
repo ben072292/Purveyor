@@ -1,4 +1,7 @@
 class Farmer < ActiveRecord::Base
+has_many :farmer_inventories
+has_many :customer_inventories
+
 validates :name, presence: true,
                  length: {minimum: 5}
 

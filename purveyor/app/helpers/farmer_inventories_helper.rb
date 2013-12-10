@@ -1,0 +1,2 @@
+module FarmerInventoriesHelper
+end

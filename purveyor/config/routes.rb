@@ -2,7 +2,10 @@ Purveyor::Application.routes.draw do
 
   resources :farmers_form
   resources :customers
-  resources :farmers
+  resources :farmers do
+    resource :farmer_inventories
+    resource :customer_inventories
+  end
   resources :admins
   resources :inventories do
     resources :items

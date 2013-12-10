@@ -1,0 +1,2 @@
+module CustomerInventoriesHelper
+end
